@@ -1,28 +1,9 @@
-* {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-    background-color: black;
-    color: white;
-}
-
-body {
-    display: grid;
-    grid-template:
-        "header main" 1fr /
-        251px 990px;
-    justify-content: center;
-}
-
-main {
-    border: solid 1px red;
-    grid-area: main;
-
-}
-
 header {
-    border: solid 1px red;
     grid-area: header;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 10px;
 }
 
 #logo {
@@ -32,21 +13,34 @@ header {
 }
 
 .header-item {
-    height: 50px;
+    height: 55px;
     padding: 12px;
+    
 
     display: grid;
     grid-template-columns: 40px 1fr;
+    width: 200px;
 
     font-size: 1.3rem;
     text-decoration: none;
 }
+
+.header-item:hover{
+    background-color: rgb(50, 50, 50);
+    border-radius: 25px;
+}
+
+.header-item:hover .header-icon {
+    background-color: rgb(50, 50, 50);
+}
+
 #tweet-button {
     height: 52px;
     width: 200px;
     padding: 12px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
     margin-bottom: 40px;
 
     background-color: #1D9BF0;
@@ -55,11 +49,13 @@ header {
     text-align: center;
     font-size: 1.3rem;
     text-decoration: none;
+    display: block;
 }
 
 #account-bar {
     height: 64px;
-    padding: 6px;
+    width: 90%;
+    padding-left: 5px;
 
     display: grid;
     grid-template-columns: 42px 1fr 25px;
@@ -67,10 +63,29 @@ header {
     font-size: 0.9rem;
     text-decoration: none;
 
+    position: absolute;
+    bottom: 0;
 }
+
+#account-bar:hover {
+    background-color: rgb(50, 50, 50);
+    border-radius: 32px;
+}
+
+#account-bar:hover .account-bar-child {
+    background-color: rgb(50, 50, 50);
+}
+
+.account-bar-text {
+    margin: auto;
+}
+
 #account-bar > img {
     margin-top: 5px;
+    margin: auto;
+    border-radius: 50%;
 }
+
 #account-bar > div > p {
     margin: 5px;
 }
